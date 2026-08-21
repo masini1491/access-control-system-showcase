@@ -71,6 +71,26 @@ RS485 是目前已驗證的本機傳輸基準；TTL ↔ LIN／TJA1021 仍是尚�
 
 此公開 repository 不包含 firmware 原始碼、production 設定、credentials、source hash manifest 或內部開發指令。
 
+## 開發方式與專案規模
+
+本專案採用 **AI-assisted development / vibe coding** 方式進行開發，主要透過 **ChatGPT** 與 **OpenAI Codex** 協作，形成 human-in-the-loop 的 AI-assisted engineering workflow。
+
+- **開發者**：負責需求、硬體選擇、系統方向、實機量測與最終驗證。
+- **ChatGPT**：協助架構、規格、技術討論、review 與開發任務拆解。
+- **OpenAI Codex**：協助程式實作、測試／靜態驗證與 repository 維護。
+
+AI 產生的程式與設計建議不會直接視為完成品；涉及門禁控制、ESP32、電氣介面與硬體通訊的內容，仍需經過實機測試、電氣量測及人工判斷後，才納入正式設計。本段不代表 OpenAI 贊助、認證或參與本專案的硬體安全決策。
+
+### 專案規模
+
+- ESP32 Firmware：約 **18,700 行**
+- 開發／驗證工具：約 **4,400 行**
+- Android application：約 **470 行**
+- 自寫程式與工具合計：約 **23,600 行**
+- 技術文件：約 **6,200 行**
+
+以上為 Git tracked files 的實體行數（physical lines），包含空白與註解；不包含 Arduino Core、第三方函式庫、downloaded dependencies、build／cache 與 generated artifacts。
+
 ## 參考資料
 
 本專案為獨立設計與實作；下列官方文件、上游函式庫與開源專案主要用於硬體規格、API、協議行為及相容性驗證。列為參考資料不代表本專案直接採用或複製其完整架構。
