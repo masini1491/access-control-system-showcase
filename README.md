@@ -12,9 +12,9 @@ flowchart LR
     Fingerprint[未來指紋模組] -. 規劃中 .-> Outdoor
     Outdoor -->|RS485 本機生命線| Indoor[Indoor<br/>唯一授權中心]
     Outdoor -->|可選 MQTT 網路傳輸| Indoor
+    Outdoor -->|TTL ↔ LIN／TJA1021 替代 PHY（尚待硬體驗證）| Indoor
     Indoor -->|允許／拒絕| Relay[門鎖 Relay 控制]
     Indoor -->|白名單／紀錄／Web 介面| Admin[本機管理]
-    LIN[TTL ↔ LIN／TJA1021<br/>替代 PHY] -. 評估中 .-> Outdoor
 ```
 
 RS485 是目前已驗證的本機傳輸基準；TTL ↔ LIN／TJA1021 仍是尚待硬體驗證的替代實體層。無論傳輸方式為何，最終授權與 Relay 控制都由 Indoor 負責。
