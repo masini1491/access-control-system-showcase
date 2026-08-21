@@ -70,3 +70,13 @@ RS485 是目前已驗證的本機傳輸基準；TTL ↔ LIN／TJA1021 仍是尚�
 - [Adafruit Fingerprint Sensor Library](https://github.com/adafruit/Adafruit-Fingerprint-Sensor-Library)：主要 fingerprint library 參考。
 - [R503 Fingerprint Sensor Library](https://github.com/mpagnoulle/R503-Fingerprint-Sensor-Library)：R503 protocol／capability 補充參考。
 - [NXP TJA1021 官方產品文件](https://www.nxp.com/products/interfaces/lin-transceivers/standard-lin/lin-transceiver:TJA1021)：TTL ↔ LIN／TJA1021 PHY 參考。
+
+## 授權
+
+本 repository 中由作者自行撰寫的文件、圖表與展示內容，除另有註明外，採用 Creative Commons Attribution 4.0 International（CC BY 4.0）授權。
+
+第三方專案、函式庫、商標、文件與引用內容，仍適用各自原始授權與權利聲明。CC BY 4.0 僅適用於本 public showcase repository 中由作者自行產生的文件、圖表與展示內容，不涵蓋 private firmware repository、第三方原始碼、第三方商標、NXP／Adafruit／Espressif 等第三方內容，或未公開的 production firmware source。
+
+此授權不代表未公開的 private firmware source 採用相同授權。
+
+[查看完整授權條款](LICENSE)
