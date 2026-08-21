@@ -57,3 +57,16 @@ RS485 是目前已驗證的本機傳輸基準；TTL ↔ LIN／TJA1021 仍是尚�
 - [發展路線](docs/roadmap.md)
 
 此公開 repository 不包含 firmware 原始碼、production 設定、credentials、source hash manifest 或內部開發指令。
+
+## 參考資料
+
+本專案為獨立設計與實作；下列官方文件、上游函式庫與開源專案主要用於硬體規格、API、協議行為及相容性驗證。列為參考資料不代表本專案直接採用或複製其完整架構。
+
+- [Espressif Arduino Core for ESP32](https://github.com/espressif/arduino-esp32)：ESP32 Arduino 平台參考。
+- [Espressif ESP-MQTT](https://github.com/espressif/esp-mqtt)：MQTT client 與 lifecycle API 參考。
+- [Adafruit PN532](https://github.com/adafruit/Adafruit-PN532)：PN532 reader 參考。
+- [Elechouse PN532 Android HCE example](https://github.com/elechouse/PN532/blob/PN532_HSU/PN532/examples/android_hce/android_hce.ino)：PN532 與 Android HCE／APDU 互動的補充參考。
+- [Android Developers — Host-based Card Emulation](https://developer.android.com/develop/connectivity/nfc/hce)：Android HCE、AID、APDU 與 ISO-DEP 官方參考。
+- [Adafruit Fingerprint Sensor Library](https://github.com/adafruit/Adafruit-Fingerprint-Sensor-Library)：主要 fingerprint library 參考。
+- [R503 Fingerprint Sensor Library](https://github.com/mpagnoulle/R503-Fingerprint-Sensor-Library)：R503 protocol／capability 補充參考。
+- [NXP TJA1021 官方產品文件](https://www.nxp.com/products/interfaces/lin-transceivers/standard-lin/lin-transceiver:TJA1021)：TTL ↔ LIN／TJA1021 PHY 參考。
