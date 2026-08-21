@@ -4,6 +4,21 @@
 
 這是一套以 ESP32 為核心、為傳統多戶型對講機增加智慧門禁能力的展示專案。Indoor 維持唯一授權 authority，Outdoor 負責讀取 credential 與按鈕事件，再透過受保護的 local 或 network transport 回報。
 
+## 高階架構
+
+```mermaid
+flowchart LR
+    RFID[RFID / NFC / HCE / Button] --> Outdoor[Outdoor<br/>Reader & Event Producer]
+    Fingerprint[Future Fingerprint] -. planned .-> Outdoor
+    Outdoor -->|RS485 local lifeline| Indoor[Indoor<br/>Sole Authorization Authority]
+    Outdoor -->|Optional MQTT network transport| Indoor
+    Indoor -->|ALLOW / DENY| Relay[Door Relay]
+    Indoor -->|Whitelist / logs / Web UI| Admin[Local Administration]
+    LIN[TTL ↔ LIN / TJA1021<br/>Alternative PHY] -. evaluation .-> Outdoor
+```
+
+RS485 是目前 validated local baseline；TTL ↔ LIN／TJA1021 仍是待硬體驗證的 alternative PHY。無論 transport 為何，最終授權與 Relay control 都由 Indoor 負責。
+
 ## 核心功能
 
 - ESP32 Indoor／Outdoor architecture
