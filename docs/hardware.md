@@ -23,6 +23,12 @@
 
 文中品牌與商標僅用於說明測試與相容性對象；本專案與相關原廠無隸屬、授權或合作關係。
 
+## 呼叫線再利用的電氣邊界
+
+高階 retrofit 架構可將原實體呼叫按鈕接到 Outdoor GPIO input，並由 Indoor Relay contacts 重建原本的呼叫接點。Relay contact 閉合時，原 intercom call circuit 的電壓／電流會經過接點；ESP32 GPIO 僅處於控制側，不直接承載該呼叫迴路。實際 relay contact rating、隔離能力、call power、common、individual call input 與極性，必須依品牌／型號及現場量測確認。
+
+這不代表所有 relay module 都有相同 isolation/contact rating，也不代表所有四線式系統可直接套用。
+
 ## 指紋模組方向
 
 未來指紋模組預計使用保留的 AUX UART 能力。R503／R503S 的文件基準僅假設 OFF／RED／BLUE 雙色 LED 能力，不假設 full RGB、混色或動畫；目前不包含 driver、enrollment 或硬體結果。

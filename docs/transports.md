@@ -25,3 +25,7 @@
 - 不取代本機生命線
 - Indoor 仍是唯一授權中心
 - broker、username、password、client ID、ACL、Pair ID 與 cryptographic secrets 不公開
+
+## Wiring strategy boundary
+
+Call-wire repurposing is not a transport。它只是讓既有 conductor 可重新分配；資料仍須選用既有的 RS485、optional LIN PHY 或 MQTT。高階流程是：existing conductor reuse → chosen transport → ButtonEvent delivery，不新增第四種 transport。

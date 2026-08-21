@@ -62,6 +62,18 @@ RS485 是目前已驗證的本機傳輸基準；TTL ↔ LIN／TJA1021 仍是尚�
 
 文中品牌與商標僅用於說明測試與相容性對象；本專案與相關原廠無隸屬、授權或合作關係。
 
+## 既有呼叫線再利用
+
+在既有傳統對講機線材不足時，原室外呼叫按鈕可改由 Outdoor GPIO 讀取，按鍵動作轉為 `ButtonEvent`，經 Indoor／Outdoor transport 傳送，再由 Indoor Relay 重建原本的呼叫接點。如此原本逐戶承載 call signal 的導線有機會重新配置，降低重新拉線需求。
+
+```text
+Physical Button → Outdoor GPIO → ButtonEvent
+        → RS485 / LIN / MQTT → Indoor Relay
+        → Existing Intercom Call Circuit
+```
+
+這是 wiring reuse strategy，不是新的 protocol。不同四線式系統的 call power、common terminal、individual call line、voltage、polarity 與 contact rating 仍需個別確認。
+
 ## 文件
 
 - [系統架構](docs/architecture.md)

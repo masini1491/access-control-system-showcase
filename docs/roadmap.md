@@ -9,3 +9,7 @@
 - 📋 Matter 選配整合
 
 Production firmware、protocol contract 與安全實作仍以 private development repository 為唯一事實來源；本 showcase 不作為開發 repository。
+
+### GPIO Expansion
+
+MCP23017 I²C GPIO expander 曾被評估為降低多 Button／Relay configuration 對 ESP32 native GPIO 消耗的可能 future option；目前 **Evaluated / Deferred / Not Implemented**，不是 supported hardware 或 current architecture。

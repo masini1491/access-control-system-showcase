@@ -30,3 +30,15 @@
 ```
 
 Outdoor 是憑證候選來源，不在本地執行白名單授權，也不直接決定開門。公開文件不包含 production key、Pair ID、真實白名單值或可直接利用的安全實作細節。
+
+## Existing Wiring Reuse
+
+Call-wire repurposing 位於 physical／installation layer，不是 transport。高階流程如下：
+
+```text
+Physical Button → Outdoor GPIO → ButtonEvent
+        → selected transport → Indoor Button Relay1–4
+        → relay contact → existing intercom call circuit
+```
+
+RS485、LIN PHY 與 MQTT 屬於 transport layer；Indoor Relay reconstruction 屬於 Indoor physical-output layer。Button Relay 與 Door Release Relay 不同，Indoor 授權中心與既有存取控制邊界不變。
