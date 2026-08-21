@@ -1,23 +1,23 @@
-# ESP32 Access Control System
+# ESP32 智慧門禁系統（Access Control System）
 
 > 此 repository 為公開展示與技術文件用途。實際 firmware 開發 repository 為 private，並不在此 repository 公開。
 
-這是一套以 ESP32 為核心、為傳統多戶型對講機增加智慧門禁能力的展示專案。Indoor 維持唯一授權 authority，Outdoor 負責讀取 credential 與按鈕事件，再透過受保護的 local 或 network transport 回報。
+這是一套以 ESP32 為核心、為傳統多戶型對講機增加智慧門禁能力的展示專案。Indoor 維持唯一授權中心，Outdoor 負責讀取憑證與按鈕事件，再透過受保護的本機或網路傳輸回報。
 
 ## 高階架構
 
 ```mermaid
 flowchart LR
-    RFID[RFID / NFC / HCE / Button] --> Outdoor[Outdoor<br/>Reader & Event Producer]
-    Fingerprint[Future Fingerprint] -. planned .-> Outdoor
-    Outdoor -->|RS485 local lifeline| Indoor[Indoor<br/>Sole Authorization Authority]
-    Outdoor -->|Optional MQTT network transport| Indoor
-    Indoor -->|ALLOW / DENY| Relay[Door Relay]
-    Indoor -->|Whitelist / logs / Web UI| Admin[Local Administration]
-    LIN[TTL ↔ LIN / TJA1021<br/>Alternative PHY] -. evaluation .-> Outdoor
+    RFID[RFID／NFC／HCE／按鈕] --> Outdoor[Outdoor<br/>讀取器與事件來源]
+    Fingerprint[未來指紋模組] -. 規劃中 .-> Outdoor
+    Outdoor -->|RS485 本機生命線| Indoor[Indoor<br/>唯一授權中心]
+    Outdoor -->|可選 MQTT 網路傳輸| Indoor
+    Indoor -->|允許／拒絕| Relay[門鎖 Relay 控制]
+    Indoor -->|白名單／紀錄／Web 介面| Admin[本機管理]
+    LIN[TTL ↔ LIN／TJA1021<br/>替代 PHY] -. 評估中 .-> Outdoor
 ```
 
-RS485 是目前已驗證的本機傳輸基準；TTL ↔ LIN／TJA1021 仍是待硬體驗證的替代實體層。無論傳輸方式為何，最終授權與 Relay 控制都由 Indoor 負責。
+RS485 是目前已驗證的本機傳輸基準；TTL ↔ LIN／TJA1021 仍是尚待硬體驗證的替代實體層。無論傳輸方式為何，最終授權與 Relay 控制都由 Indoor 負責。
 
 ## 為什麼同時保留 RS485 與 LIN？
 
@@ -29,7 +29,7 @@ RS485 是目前已驗證的本機傳輸基準；TTL ↔ LIN／TJA1021 仍是待�
 | 訊號方式 | 差動 A／B | 單線 LIN 加共同 GND 參考 |
 | 資料訊號線需求 | 2 芯 | 1 芯 LIN 資料線 |
 | 抗干擾與適用性 | 抗干擾能力較強，適合優先採用 | 較依賴共同接地與實際配線環境 |
-| 適用情境 | 現場可提供足夠線芯時 | 既有對講機線芯不足的 retrofit 情境 |
+| 適用情境 | 現場可提供足夠線芯時 | 既有對講機線芯不足的既有系統改造情境 |
 | 本專案狀態 | ✅ 已驗證基準 | 🧪 硬體驗證待完成 |
 | 上層協議 | 本專案自訂協議 | 本專案自訂協議；TJA1021 僅作 PHY |
 
@@ -37,23 +37,23 @@ RS485 是目前已驗證的本機傳輸基準；TTL ↔ LIN／TJA1021 仍是待�
 
 ## 核心功能
 
-- ESP32 Indoor／Outdoor architecture
+- ESP32 Indoor／Outdoor 架構
 - RFID／NFC 與 Android HCE
-- Indoor whitelist authorization
-- Relay controlled door unlock
-- RS485／MAX3485 local transport（validated baseline）
-- TTL ↔ LIN／TJA1021 alternative PHY（hardware validation pending）
-- MQTT optional network transport
-- Web-based configuration 與 OTA（僅高階描述）
-- Fingerprint R503S roadmap，並保留 R503／AS608 compatibility direction
+- Indoor 白名單授權
+- Relay 控制門鎖解鎖
+- RS485／MAX3485 本機傳輸（已驗證基準）
+- TTL ↔ LIN／TJA1021 替代 PHY（尚待硬體驗證）
+- MQTT 可選網路傳輸
+- Web 設定介面與 OTA（僅高階描述）
+- R503S 指紋模組規劃，並保留 R503／AS608 相容方向
 
-狀態標記：✅ software implemented／validated、🧪 experimental／hardware validation pending、📋 planned。
+狀態標記：✅ 已完成／已驗證、🧪 實驗中／尚待硬體驗證、📋 規劃中。
 
 ## 文件
 
-- [Architecture](docs/architecture.md)
-- [Hardware](docs/hardware.md)
-- [Transports](docs/transports.md)
-- [Roadmap](docs/roadmap.md)
+- [系統架構](docs/architecture.md)
+- [硬體](docs/hardware.md)
+- [傳輸方式](docs/transports.md)
+- [發展路線](docs/roadmap.md)
 
-此公開 repository 不包含 firmware source、production configuration、credentials、source hash manifest 或內部開發指令。
+此公開 repository 不包含 firmware 原始碼、production 設定、credentials、source hash manifest 或內部開發指令。

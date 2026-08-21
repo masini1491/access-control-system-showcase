@@ -1,32 +1,32 @@
-# Architecture
+# 系統架構
 
 ## 高階角色
 
-### Outdoor
+### Outdoor：室外端
 
-- PN532 RFID／NFC reader
-- Android HCE transaction reader
-- 未來 fingerprint candidate acquisition
-- Button 與選配感測器事件來源
+- PN532 RFID／NFC 讀取器
+- Android HCE 交易讀取器
+- 未來指紋憑證候選取得
+- 按鈕與選配感測器事件來源
 
-### Indoor
+### Indoor：室內端
 
-- 唯一 credential authorization authority
-- whitelist 與 exact credential matching
-- relay control、access decision 與 event integration
+- 唯一憑證授權中心
+- 白名單與完整憑證比對
+- Relay 控制、存取決策與事件整合
 
 ## 事件流程
 
 ```text
-Credential / Button
+憑證／按鈕
         ↓
       Outdoor
-        ↓ authenticated local or network transport
+        ↓ 已驗證的本機或網路傳輸
       Indoor
-        ↓ whitelist authorization
-   ALLOW / DENY
+        ↓ 白名單授權
+     允許／拒絕
         ↓
       Relay
 ```
 
-Outdoor 是 credential candidate producer，不在本地執行 whitelist authorization，也不直接決定開門。公開文件不包含 production key、Pair ID、真實 whitelist 值或可直接利用的安全實作細節。
+Outdoor 是憑證候選來源，不在本地執行白名單授權，也不直接決定開門。公開文件不包含 production key、Pair ID、真實白名單值或可直接利用的安全實作細節。

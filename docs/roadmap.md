@@ -1,11 +1,11 @@
-# Roadmap
+# 發展路線
 
 以下為高階方向，不承諾日期：
 
-- 🧪 Door Protocol MQTT live broker／SESSION validation
-- 🧪 R503S fingerprint hardware validation
-- 🧪 TTL ↔ LIN／TJA1021 hardware validation
-- 📋 Home Assistant integration
-- 📋 optional Matter integration
+- 🧪 Door Protocol MQTT 實際 broker／SESSION 驗證
+- 🧪 R503S 指紋模組硬體驗證
+- 🧪 TTL ↔ LIN／TJA1021 硬體驗證
+- 📋 Home Assistant 整合
+- 📋 Matter 選配整合
 
-Production firmware、protocol contract 與 security implementation 仍以 private development repository 為唯一 source of truth；本 showcase 不作為開發 repository。
+Production firmware、protocol contract 與安全實作仍以 private development repository 為唯一事實來源；本 showcase 不作為開發 repository。
