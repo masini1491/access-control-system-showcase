@@ -9,8 +9,9 @@
 | PN532 | ✅ RFID／NFC 讀取器整合 |
 | MAX3485／RS485 | ✅ 已驗證的本機傳輸基準 |
 | TJA1021 類 transceiver | 🧪 替代 PHY；尚待硬體驗證 |
-| R503S | 🧪 未來主要指紋目標；尚未進行硬體驗證 |
-| R503／AS608 | 📋 相容方向，需各型號獨立確認 |
+| GPS/GNSS | ❌ 已退役；GPIO20/21 改保留為 Fingerprint AUX UART direction |
+| R503S | 🧪 主要硬體目標；software scan/match diagnostics 已完成，硬體驗證待完成 |
+| R503／AS608 | 📋 相容方向，需各型號獨立確認；不宣稱與 R503S 完全等價 |
 | Relay modules | ✅ 門鎖解鎖輸出路徑，由 Indoor 控制 |
 
 文件只提供一般硬體方向，不公開住家線路、IP、Wi-Fi、實際 hostname、裝置識別值或可直接利用的 physical bypass 資訊。
@@ -29,6 +30,14 @@
 
 這不代表所有 relay module 都有相同 isolation/contact rating，也不代表所有四線式系統可直接套用。
 
+## PT Door State 限制
+
+PT Door State software path 與 bench simulation 已完成；實際 intercom PT 可能相對 intercom GND 呈負極性，且不同安裝環境的 magnitude 可能不同。舊的 positive-only resistor-divider prototype 已失效並標記為 **DO NOT INSTALL**；polarity-tolerant／protected PT6 front-end 與完整電氣校正仍待完成。
+
+這不代表所有傳統四線式對講機具有相同 polarity 或 voltage range，也不公開住家量測細節。
+
 ## 指紋模組方向
 
-未來指紋模組預計使用保留的 AUX UART 能力。R503／R503S 的文件基準僅假設 OFF／RED／BLUE 雙色 LED 能力，不假設 full RGB、混色或動畫；目前不包含 driver、enrollment 或硬體結果。
+Fingerprint Stage 2A 已完成 software-side UART detection、scan／feature extraction 與 sensor-local search diagnostics，並建立 bounded worker ownership；GPIO20／GPIO21 保留為 Fingerprint AUX UART direction。主要 hardware target 為 R503S，R503／AS608 仍須逐型號驗證。
+
+目前尚未接入正式開門授權；Indoor 仍是唯一 authorization authority。enrollment／delete、LED control 與 hardware validation 仍 pending。R503／R503S baseline LED 僅描述 OFF／RED／BLUE direction，不假設 full RGB、混色或動畫。

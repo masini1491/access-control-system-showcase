@@ -6,7 +6,7 @@
 
 - PN532 RFID／NFC 讀取器
 - Android HCE 交易讀取器
-- 未來指紋憑證候選取得
+- Fingerprint candidate acquisition software path（Stage 2A；硬體驗證待完成）
 - 按鈕與選配感測器事件來源
 
 ### Indoor：室內端

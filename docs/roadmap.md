@@ -2,9 +2,11 @@
 
 以下為高階方向，不承諾日期：
 
-- 🧪 Door Protocol MQTT 實際 broker／SESSION 驗證
+- 🧪 Door Protocol MQTT 剩餘 broker／SESSION／ACL hardware-network 驗證
 - 🧪 R503S 指紋模組硬體驗證
+- 📋 Fingerprint enrollment／delete、LED 與 Indoor credential integration
 - 🧪 TTL ↔ LIN／TJA1021 硬體驗證
+- 📋 polarity-tolerant／protected PT6 front-end 與實際電氣校正
 - 📋 Home Assistant 整合
 - 📋 Matter 選配整合
 

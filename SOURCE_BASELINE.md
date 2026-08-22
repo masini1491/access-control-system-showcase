@@ -5,10 +5,10 @@
 | 項目 | 基準 |
 |---|---|
 | Private source repository | `masini1491/access-control-system` |
-| Source branch | `feature/fingerprint-scan-match` |
-| Private source baseline | `2653c95c563567b4dd8bfcc7efbb75c5c33a2fe0` |
+| Source branch | `main` |
+| Private source baseline | `936fa2d9cdec71beeff083cd12d5b933a3168b0f` |
 | Last synchronized | `2026-08-23` |
 
 `Private source baseline` 表示本 showcase 目前公開內容與 aggregate 資訊所依據的 private repository snapshot。
 
-它不代表 private source 已公開，也不代表該 feature branch 已 merge 到 `main`。
+它不代表 private source 已公開；此 baseline 只表示本 showcase 內容所依據的 private `main` snapshot。

@@ -21,9 +21,10 @@
 
 ## MQTT
 
-- 🧪 可選的網路傳輸方式
+- 🧪 可選的網路傳輸方式；software architecture 與 deterministic validation 已相當完整
 - 不取代本機生命線
 - Indoor 仍是唯一授權中心
+- 部分 live broker／SESSION evidence 已存在；latest lifecycle、broker／ACL 負面案例仍待 hardware/network re-validation
 - broker、username、password、client ID、ACL、Pair ID 與 cryptographic secrets 不公開
 
 ## Wiring strategy boundary

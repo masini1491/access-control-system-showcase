@@ -9,7 +9,7 @@
 ```mermaid
 flowchart LR
     RFID[RFID／NFC／HCE／按鈕] --> Outdoor[Outdoor<br/>讀取器與事件來源]
-    Fingerprint[未來指紋模組] -. 規劃中 .-> Outdoor
+    Fingerprint[Fingerprint Stage 2A<br/>software implemented<br/>hardware pending] -. candidate path .-> Outdoor
     Outdoor -->|RS485 本機生命線| Indoor[Indoor<br/>唯一授權中心]
     Outdoor -->|可選 MQTT 網路傳輸| Indoor
     Outdoor -->|TTL ↔ LIN／TJA1021 替代 PHY（尚待硬體驗證）| Indoor
@@ -45,9 +45,22 @@ RS485 是目前已驗證的本機傳輸基準；TTL ↔ LIN／TJA1021 仍是尚�
 - TTL ↔ LIN／TJA1021 替代 PHY（尚待硬體驗證）
 - MQTT 可選網路傳輸
 - Web 設定介面與 OTA（僅高階描述）
-- R503S 指紋模組規劃，並保留 R503／AS608 相容方向
+- Fingerprint Stage 2A software path（硬體驗證待完成）
 
 狀態標記：✅ 已完成／已驗證、🧪 實驗中／尚待硬體驗證、📋 規劃中。
+
+### 目前狀態摘要
+
+| 項目 | 目前狀態 |
+|---|---|
+| RS485 | ✅ 已驗證的本機生命線基準 |
+| PN532 RFID／NFC | ✅ 已實作的憑證候選來源 |
+| Android HCE | ✅ 已有選定裝置整合證據；其他裝置驗證持續進行 |
+| MQTT | 🧪 軟體架構與 deterministic validation 完整度高；live validation 部分完成 |
+| Fingerprint | 🧪 Stage 2A software complete；hardware validation pending |
+| PT Door State | 🧪 software／bench PASS；實際電氣 front-end pending |
+| LIN PHY | 🧪 hardware validation pending |
+| ESP32-C6 | 📋 future option；board validation pending |
 
 ## 適用對講機系統
 
@@ -99,10 +112,10 @@ AI 產生的程式與設計建議不會直接視為完成品；涉及門禁控�
 | 類別 | 檔案數 | 實體行數 |
 | --- | ---: | ---: |
 | ESP32 Firmware | 31 | 19,441 |
-| 開發／驗證工具 | 34 | 4,649 |
+| 開發／驗證工具 | 34 | 4,681 |
 | Android application | 9 | 424 |
-| **程式與工具合計（含 Android）** | **74** | **24,514** |
-| 技術文件 | 18 | 6,610 |
+| **程式與工具合計（含 Android）** | **74** | **24,546** |
+| 技術文件 | 18 | 6,614 |
 
 以上數字來自 private development repository 的 deterministic Git tracked physical-line aggregate，包含空白與註解；此 showcase 不公開 firmware source，並排除 Arduino Core、第三方函式庫、downloaded dependencies、build／cache 與 generated artifacts。
 
