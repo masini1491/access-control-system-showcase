@@ -96,13 +96,15 @@ AI 產生的程式與設計建議不會直接視為完成品；涉及門禁控�
 
 ### 專案規模
 
-- ESP32 Firmware：約 **18,700 行**
-- 開發／驗證工具：約 **4,400 行**
-- Android application：約 **470 行**
-- 自寫程式與工具合計：約 **23,600 行**
-- 技術文件：約 **6,200 行**
+| 類別 | 檔案數 | 實體行數 |
+| --- | ---: | ---: |
+| ESP32 Firmware | 31 | 19,441 |
+| 開發／驗證工具 | 34 | 4,640 |
+| Android application | 9 | 424 |
+| **程式與工具合計（含 Android）** | **74** | **24,505** |
+| 技術文件 | 18 | 6,610 |
 
-以上為 Git tracked files 的實體行數（physical lines），包含空白與註解；不包含 Arduino Core、第三方函式庫、downloaded dependencies、build／cache 與 generated artifacts。
+以上數字來自 private development repository 的 deterministic Git tracked physical-line aggregate，包含空白與註解；此 showcase 不公開 firmware source，並排除 Arduino Core、第三方函式庫、downloaded dependencies、build／cache 與 generated artifacts。
 
 ## 參考資料
 
