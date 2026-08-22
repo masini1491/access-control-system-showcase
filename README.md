@@ -64,7 +64,7 @@ RS485 是目前已驗證的本機傳輸基準；TTL ↔ LIN／TJA1021 仍是尚�
 
 ## 既有呼叫線再利用
 
-在既有傳統對講機線材不足時，原室外呼叫按鈕可改由 Outdoor GPIO 讀取，按鍵動作轉為 `ButtonEvent`，經 Indoor／Outdoor transport 傳送，再由 Indoor Relay 重建原本的呼叫接點。如此原本逐戶承載 call signal 的導線有機會重新配置，降低重新拉線需求。
+在既有傳統對講機線材不足時，原室外呼叫按鈕可改由室外端 GPIO 讀取，按鍵動作轉為 `ButtonEvent`，再透過室內端與室外端之間的資料傳輸方式送至室內端，最後由室內端呼叫繼電器重建原本的呼叫接點。如此一來，原本逐戶承載呼叫訊號的導線便有機會重新配置，降低重新拉線的需求。
 
 ```text
 實體按鈕 → 室外端 GPIO → ButtonEvent
@@ -73,7 +73,7 @@ RS485 是目前已驗證的本機傳輸基準；TTL ↔ LIN／TJA1021 仍是尚�
         → 既有對講機呼叫迴路
 ```
 
-這是 wiring reuse strategy，不是新的 protocol。不同四線式系統的 call power、common terminal、individual call line、voltage、polarity 與 contact rating 仍需個別確認。
+這是既有配線再利用策略，不是新的通訊協定。不同四線式系統的呼叫電源、公共端、各戶獨立呼叫線、電壓、極性與接點額定值仍需個別確認。
 
 ## 文件
 
