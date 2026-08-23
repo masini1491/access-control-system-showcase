@@ -6,7 +6,7 @@
 |---|---|
 | Private source repository | `masini1491/access-control-system` |
 | Source branch | `main` |
-| Private source baseline | `d84561a23602bd3fe7be9cdbbd6db2d809e690db` |
+| Private source baseline | `991e35755ec3d3cf38e7e0a1032f3b04e340ead9` |
 | Last synchronized | `2026-08-23` |
 
 `Private source baseline` 表示本 showcase 目前公開內容與 aggregate 資訊所依據的 private repository snapshot。
