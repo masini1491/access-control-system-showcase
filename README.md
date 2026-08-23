@@ -49,6 +49,10 @@ RS485 是目前已驗證的本機傳輸基準；TTL ↔ LIN／TJA1021 仍是尚�
 
 狀態標記：✅ 已完成／已驗證、🧪 實驗中／尚待硬體驗證、📋 規劃中。
 
+## 本機 Web 與 mDNS
+
+在正常 LAN 模式下，`.local` 網址是方便使用者找到裝置的 discovery 入口；以 `http://indoor.local/` 或 `http://outdoor-<ID>.local/` 開啟管理頁時，GET 導覽會轉向裝置當下的 private IPv4，讓登入與後續管理 session 直接建立在 IP host。DHCP 位址仍可能變動，`.local` 不代表固定 IP；Setup AP 與 POST／API mutation 維持原本行為。
+
 ### 目前狀態摘要
 
 | 項目 | 目前狀態 |
@@ -111,10 +115,10 @@ AI 產生的程式與設計建議不會直接視為完成品；涉及門禁控�
 
 | 類別 | 檔案數 | 實體行數 |
 | --- | ---: | ---: |
-| ESP32 Firmware | 31 | 19,441 |
-| 開發／驗證工具 | 34 | 4,691 |
+| ESP32 Firmware | 32 | 19,543 |
+| 開發／驗證工具 | 35 | 4,800 |
 | Android application | 9 | 424 |
-| **程式與工具合計（含 Android）** | **74** | **24,556** |
+| **程式與工具合計（含 Android）** | **76** | **24,767** |
 | 技術文件 | 18 | 6,614 |
 
 以上數字來自 private development repository 的 deterministic Git tracked physical-line aggregate，包含空白與註解；此 showcase 不公開 firmware source，並排除 Arduino Core、第三方函式庫、downloaded dependencies、build／cache 與 generated artifacts。
