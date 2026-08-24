@@ -119,7 +119,7 @@ AI 產生的程式與設計建議不會直接視為完成品；涉及門禁控�
 | 開發／驗證工具 | 41 | 5,307 |
 | Android application | 9 | 424 |
 | **程式與工具合計（含 Android）** | **82** | **25,507** |
-| 技術文件 | 19 | 7,155 |
+| 技術文件 | 19 | 7,109 |
 
 以上數字來自 private development repository 的 deterministic Git tracked physical-line aggregate，包含空白與註解；此 showcase 不公開 firmware source，並排除 Arduino Core、第三方函式庫、downloaded dependencies、build／cache 與 generated artifacts。
 
