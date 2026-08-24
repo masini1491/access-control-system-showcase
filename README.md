@@ -51,7 +51,7 @@ RS485 是目前已驗證的本機傳輸基準；TTL ↔ LIN／TJA1021 仍是尚�
 
 ## 本機 Web 與 mDNS
 
-在正常 LAN 模式下，`.local` 網址是方便使用者找到裝置的 discovery 入口；以 `http://indoor.local/` 或 `http://outdoor-<ID>.local/` 開啟管理頁時，GET 導覽會轉向裝置當下的 private IPv4，讓登入與後續管理 session 直接建立在 IP host。DHCP 位址仍可能變動，`.local` 不代表固定 IP；Setup AP 與 POST／API mutation 維持原本行為。Indoor 在 Wi-Fi 持續失聯後會回到本機 Door-Setup AP，供使用者重新設定網路。
+在正常 LAN 模式下，`.local` 網址是方便使用者找到裝置的 discovery 入口；以 `http://indoor.local/` 或 `http://outdoor-<ID>.local/` 開啟管理頁時，GET 導覽會轉向裝置當下的 private IPv4，讓登入與後續管理 session 直接建立在 IP host。DHCP 位址仍可能變動，`.local` 不代表固定 IP；Setup AP 與 POST／API mutation 維持原本行為。Indoor 初次設定仍使用 `Door-Setup`；已設定裝置即使 Wi-Fi 失聯，也不會自動開放無密碼 recovery AP。Recovery 需要 Indoor 實體 BOOT 操作授權，且只提供 bounded temporary setup window。
 
 ### 目前狀態摘要
 
@@ -119,7 +119,7 @@ AI 產生的程式與設計建議不會直接視為完成品；涉及門禁控�
 | 開發／驗證工具 | 43 | 5,592 |
 | Android application | 9 | 424 |
 | **程式與工具合計（含 Android）** | **86** | **26,269** |
-| 技術文件 | 19 | 7,091 |
+| 技術文件 | 19 | 7,095 |
 
 以上數字來自 private development repository 的 deterministic Git tracked physical-line aggregate，包含空白與註解；此 showcase 不公開 firmware source，並排除 Arduino Core、第三方函式庫、downloaded dependencies、build／cache 與 generated artifacts。
 
@@ -129,7 +129,7 @@ AI 產生的程式與設計建議不會直接視為完成品；涉及門禁控�
 | --- | --- |
 | Source repository | `https://github.com/masini1491/access-control-system.git` |
 | Source branch | `main` |
-| Private source baseline | `5cd726169bc6a6e8e910073ef0684d39b6fb08b7` |
+| Private source baseline | `e49972a955120af7f017a4a76028b49503bc9635` |
 | Last synchronized | `2026-08-24` |
 
 此 baseline 僅標示本次公開 aggregate/documentation 內容所依據的 private source snapshot；本 showcase 不包含 private firmware、secrets 或 internal paths。
