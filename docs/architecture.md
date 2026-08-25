@@ -6,7 +6,7 @@
 
 - PN532 RFID／NFC 讀取器
 - Android HCE 交易讀取器
-- Fingerprint candidate acquisition software path（Stage 2A；硬體驗證待完成）
+- 指紋候選辨識軟體流程（Stage 2A；硬體驗證待完成）
 - 按鈕與選配感測器事件來源
 
 ### Indoor：室內端
@@ -31,14 +31,14 @@
 
 Outdoor 是憑證候選來源，不在本地執行白名單授權，也不直接決定開門。公開文件不包含 production key、Pair ID、真實白名單值或可直接利用的安全實作細節。
 
-## Existing Wiring Reuse
+## 既有配線再利用
 
-Call-wire repurposing 位於 physical／installation layer，不是 transport。高階流程如下：
+呼叫線再利用屬於實體／安裝層，不屬於傳輸層。高階流程如下：
 
 ```text
-Physical Button → Outdoor GPIO → ButtonEvent
-        → selected transport → Indoor Button Relay1–4
-        → relay contact → existing intercom call circuit
+實體按鈕 → Outdoor GPIO → ButtonEvent
+        → 選定的傳輸方式 → Indoor Button Relay1–4
+        → 繼電器接點 → 既有對講機呼叫迴路
 ```
 
-RS485、LIN PHY 與 MQTT 屬於 transport layer；Indoor Relay reconstruction 屬於 Indoor physical-output layer。Button Relay 與 Door Release Relay 不同，Indoor 授權中心與既有存取控制邊界不變。
+RS485、LIN PHY 與 MQTT 屬於傳輸層；Indoor 端的繼電器重建屬於實體輸出層。呼叫 Relay 與開門 Relay 是不同功能，Indoor 的授權中心與既有存取控制邊界維持不變。

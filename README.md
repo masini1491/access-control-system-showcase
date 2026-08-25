@@ -9,7 +9,7 @@
 ```mermaid
 flowchart LR
     RFID[RFID／NFC／HCE／按鈕] --> Outdoor[Outdoor<br/>讀取器與事件來源]
-    Fingerprint[Fingerprint Stage 2A<br/>software implemented<br/>hardware pending] -. candidate path .-> Outdoor
+    Fingerprint[指紋辨識 Stage 2A<br/>軟體已實作<br/>硬體驗證待完成] -. 候選辨識路徑 .-> Outdoor
     Outdoor -->|RS485 本機生命線| Indoor[Indoor<br/>唯一授權中心]
     Outdoor -->|可選 MQTT 網路傳輸| Indoor
     Outdoor -->|TTL ↔ LIN／TJA1021 替代 PHY（尚待硬體驗證）| Indoor
@@ -45,7 +45,7 @@ RS485 是目前已驗證的本機傳輸基準；TTL ↔ LIN／TJA1021 仍是尚�
 - TTL ↔ LIN／TJA1021 替代 PHY（尚待硬體驗證）
 - MQTT 可選網路傳輸
 - Web 設定介面與 OTA（僅高階描述）
-- Fingerprint Stage 2A software path（硬體驗證待完成）
+- 指紋辨識 Stage 2A 軟體流程（硬體驗證待完成）
 
 狀態標記：✅ 已完成／已驗證、🧪 實驗中／尚待硬體驗證、📋 規劃中。
 
@@ -61,10 +61,10 @@ RS485 是目前已驗證的本機傳輸基準；TTL ↔ LIN／TJA1021 仍是尚�
 | PN532 RFID／NFC | ✅ 已實作的憑證候選來源 |
 | Android HCE | ✅ 已有選定裝置整合證據；其他裝置驗證持續進行 |
 | MQTT | 🧪 軟體架構與 deterministic validation 完整度高；live validation 部分完成 |
-| Fingerprint | 🧪 Stage 2A software complete；hardware validation pending |
-| PT Door State | 🧪 software／bench PASS；實際電氣 front-end pending |
-| LIN PHY | 🧪 hardware validation pending |
-| ESP32-C6 | 📋 future option；board validation pending |
+| Fingerprint | 🧪 Stage 2A 軟體已完成；硬體驗證待完成 |
+| PT Door State | 🧪 軟體／台架驗證 PASS；實際電氣前端待完成 |
+| LIN PHY | 🧪 硬體驗證待完成 |
+| ESP32-C6 | 📋 未來選項；板卡驗證待完成 |
 
 ## 適用對講機系統
 
