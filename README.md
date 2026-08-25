@@ -66,6 +66,16 @@ RS485 是目前已驗證的本機傳輸基準；TTL ↔ LIN／TJA1021 仍是尚�
 | LIN PHY | 🧪 硬體驗證待完成 |
 | ESP32-C6 | 📋 未來選項；板卡驗證待完成 |
 
+### Web UI 管理介面示意
+
+以下畫面依目前 Indoor／Outdoor Web UI 程式碼與介面規則產生，用於呈現資訊架構與操作方式；並非實機瀏覽器截圖。實際畫面會依 firmware 版本、裝置設定與 runtime state 略有差異。
+
+圖中 IP、SSID、UID、Token、戶別與其他識別資料均為示意資料。
+
+| Indoor 管理介面示意 | Outdoor 管理介面示意 |
+|---|---|
+| ![Indoor Web UI concept](assets/images/web-ui-indoor-concept.png) | ![Outdoor Web UI concept](assets/images/web-ui-outdoor-concept.png) |
+
 ## 適用對講機系統
 
 本專案主要面向既有傳統四線式對講機的智慧門禁擴充，但不是所有四線式對講機的通用轉接器。不同品牌／型號仍可能有不同的接腳、電壓、極性，以及呼叫、開門或其他輔助訊號；實裝前必須個別實測確認。
@@ -116,10 +126,10 @@ AI 產生的程式與設計建議不會直接視為完成品；涉及門禁控�
 | 類別 | 檔案數 | 實體行數 |
 | --- | ---: | ---: |
 | ESP32 Firmware | 38 | 20,501 |
-| 開發／驗證工具 | 52 | 6,358 |
+| 開發／驗證工具 | 52 | 6,108 |
 | Android application | 9 | 424 |
-| **程式與工具合計（含 Android）** | **99** | **27,283** |
-| 技術文件 | 22 | 7,311 |
+| **程式與工具合計（含 Android）** | **99** | **27,033** |
+| 技術文件 | 22 | 7,324 |
 
 以上數字來自 private development repository 的 deterministic Git tracked physical-line aggregate，包含空白與註解；此 showcase 不公開 firmware source，並排除 Arduino Core、第三方函式庫、downloaded dependencies、build／cache 與 generated artifacts。
 
@@ -129,7 +139,7 @@ AI 產生的程式與設計建議不會直接視為完成品；涉及門禁控�
 | --- | --- |
 | Source repository | `https://github.com/masini1491/access-control-system.git` |
 | Source branch | `main` |
-| Private source baseline | `69a7ef018a4fb5aa3f192526e4c24e0aff639147` |
+| Private source baseline | `2c1243bef855366ff4dabd2a16d24485a6786d3b` |
 | Last synchronized | `2026-08-25` |
 
 此 baseline 僅標示本次公開 aggregate/documentation 內容所依據的 private source snapshot；本 showcase 不包含 private firmware、secrets 或 internal paths。
