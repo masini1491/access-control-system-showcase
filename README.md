@@ -126,10 +126,10 @@ AI 產生的程式與設計建議不會直接視為完成品；涉及門禁控�
 | 類別 | 檔案數 | 實體行數 |
 | --- | ---: | ---: |
 | ESP32 Firmware | 40 | 21,079 |
-| 開發／驗證工具 | 62 | 7,139 |
+| 開發／驗證工具 | 63 | 7,326 |
 | Android application | 9 | 424 |
-| **程式與工具合計（含 Android）** | **111** | **28,642** |
-| 技術文件 | 25 | 7,388 |
+| **程式與工具合計（含 Android）** | **112** | **28,829** |
+| 技術文件 | 25 | 7,381 |
 
 以上數字來自 private development repository 的 deterministic Git tracked physical-line aggregate，包含空白與註解；此 showcase 不公開 firmware source，並排除 Arduino Core、第三方函式庫、downloaded dependencies、build／cache 與 generated artifacts。
 
@@ -139,7 +139,7 @@ AI 產生的程式與設計建議不會直接視為完成品；涉及門禁控�
 | --- | --- |
 | Source repository | `https://github.com/masini1491/access-control-system.git` |
 | Source branch | `main` |
-| Private source baseline | `02ae012` |
+| Private source baseline | `dd91f3ada6cc8acd7a03a060f606739c7c899cd4` |
 | Last synchronized | `2026-08-27` |
 
 此 baseline 僅標示本次公開 aggregate/documentation 內容所依據的 private source snapshot；本 showcase 不包含 private firmware、secrets 或 internal paths。
