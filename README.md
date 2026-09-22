@@ -139,7 +139,7 @@ AI 產生的程式與設計建議不會直接視為完成品；涉及門禁控�
 | --- | --- |
 | Source repository | `https://github.com/masini1491/access-control-system.git` |
 | Source branch | `main` |
-| Private source baseline | `f5e49317c762184ec4b3d99c17965e56030499d0` |
+| Private source baseline | `bd23d306bdb04491584df07edf28b6e94baaa03d` |
 | Last synchronized | `2026-09-22` |
 
 此 baseline 僅標示本次公開 aggregate/documentation 內容所依據的 private source snapshot；本 showcase 不包含 private firmware、secrets 或 internal paths。
