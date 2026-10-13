@@ -5,10 +5,10 @@
 | 項目 | 基準 |
 |---|---|
 | Private source repository | `masini1491/access-control-system` |
-| Source branch | `main` |
-| Private source baseline | `66e3a67f08e761f8cfcfc01f619d236756cda4e9` |
-| Last synchronized | `2026-10-11` |
+| Source branch | `validation/stage2-resume-integrity` |
+| Private source baseline | `5d4e4d116de51726a95d079f155c519043439334` |
+| Last synchronized | `2026-10-13` |
 
 `Private source baseline` 表示本 showcase 目前公開內容與 aggregate 資訊所依據的 private repository snapshot。
 
-它不代表 private source 已公開；此 baseline 只表示本 showcase 內容所依據的 private `main` snapshot。
+它不代表 private source 已公開；此 baseline 只表示本 showcase 內容所依據的 private source branch snapshot。
